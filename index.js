@@ -4,18 +4,6 @@ var utils = require("./utils")
 var yama = utils.getAllCards()
 
 /**
- * ルール上出せる札をリストアップ
- */
-function getAvailableCards(nowCard, cards){
-  //WILD, WILD4はいつでも出せる
-  //WILD, 数字カードの後には色が同じならなんでも出せる
-  //特殊カードの後には同種の特殊カードなら出せる
-  //特殊カードの後には同色の特殊カードなら出せる
-  //WILD4の後には同色の特殊カードなら出せる
-  return []
-}
-
-/**
  * プレイヤー定義
  */
 class Player{
@@ -60,8 +48,7 @@ var nowCard = utils.getCardRandom(yama)
 function turn(yama, player){
   //プレイヤー順に出せるか問い合わせ（複数枚可）
   var card = player.doTurn(nowCard)
-
-  //ペナルティがあれば適用してターンを飛ばす
+  //出せない場合、ペナルティがあれば適用してターンを飛ばす
 
   //出せなければ、一枚引く
   //出せるか問い合わせ

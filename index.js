@@ -18,6 +18,12 @@ class Player{
     //必ず１枚めを出す戦略
     return this.fuda.splice(0, 1)
   }
+  specifyWildColor(){
+    //WILDを出す時、色を指定する
+    //必ず赤を指定する戦略
+    return "R"
+  }
+
   sayUno(){
     if(this.fuda.length === 1){
       console.log("UNO!!")
